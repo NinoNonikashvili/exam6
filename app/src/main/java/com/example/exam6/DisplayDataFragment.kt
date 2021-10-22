@@ -15,7 +15,7 @@ import com.example.exam6.network.Content
 class DisplayDataFragment : Fragment() {
     private val viewModel:DisplayViewModel by viewModels()
     private lateinit var recycler: RecyclerView
-      lateinit var data: List<Content>
+      private var data = listOf<Content>()
   private lateinit var binding: FragmentDisplayDataBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,15 +26,17 @@ class DisplayDataFragment : Fragment() {
         viewModel.data.observe(viewLifecycleOwner, {
             data = it
         })
+
+        return binding.root
         recycler = binding.RVDisplayData
         recycler.adapter = MyAdapter(data)
         recycler.layoutManager = LinearLayoutManager(context)
-        return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
 
     }

@@ -1,5 +1,6 @@
 package com.example.exam6
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -21,6 +22,7 @@ class DisplayViewModel :ViewModel(){
             try{
                 _data.value= Api.retrofitService.getData().content
             }catch(e:Exception){
+                Log.d("MyError", "${e.message}")
             }
         }
     }

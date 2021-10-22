@@ -10,7 +10,7 @@ import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.exam6.network.Content
 
-class MyAdapter(val items: List<Content>):RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+class MyAdapter(private val items: List<Content>):RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

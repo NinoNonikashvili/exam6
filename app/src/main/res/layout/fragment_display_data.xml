@@ -5,13 +5,8 @@
     android:layout_height="wrap_content"
     tools:context=".DisplayDataFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/ED_test"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="24sp"
-        android:text="smth" />
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RV_displayData"
         android:layout_width="match_parent"
