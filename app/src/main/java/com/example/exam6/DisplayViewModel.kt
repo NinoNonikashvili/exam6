@@ -5,19 +5,22 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.exam6.network.Api
+import com.example.exam6.network.Content
 import kotlinx.coroutines.launch
 
 class DisplayViewModel :ViewModel(){
-    private var _variable1 = MutableLiveData("")
-    val variable1: LiveData<String>
-    get() = _variable1
+    private var _data = MutableLiveData<List<Content>>()
+    val data: LiveData<List<Content>>
+    get() = _data
+    init{
+        getData()
+    }
 
     private fun  getData(){
         viewModelScope.launch{
             try{
-                _variable1.value= Api.retrofitService.getData()[0].category
+                _data.value= Api.retrofitService.getData().content
             }catch(e:Exception){
-                _variable1.value = "e.message"
             }
         }
     }

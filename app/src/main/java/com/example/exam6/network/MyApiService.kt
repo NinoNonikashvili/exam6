@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-private const val BASE_URL = "https://run.mocky.io"
+private const val BASE_URL = "https://run.mocky.io/v3/"
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
@@ -16,8 +16,8 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface ApiService{
-    @GET("v3/dcf53e65-7f49-4a95-8b72-4d642e6436b1")
-    suspend fun getData():List<ParsedJson>
+    @GET("f4864c66-ee04-4e7f-88a2-2fbd912ca5ab")
+    suspend fun getData():ParsedJson
 }
 
 object Api{
